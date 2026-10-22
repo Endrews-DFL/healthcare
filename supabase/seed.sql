@@ -1,0 +1,25 @@
+insert into public.doctors (id, full_name, specialty, crm, avatar_url, rating, reviews_count, experience_years, price_per_session, bio, available_online, available_in_person, available_slots)
+values
+  ('doc_001', 'Dr. Ricardo Almeida', 'Cardiologia', 'CRM/SP 123456', 'https://api.dicebear.com/7.x/avataaars/svg?seed=Ricardo&backgroundColor=b6e3f4', 4.9, 127, 15, 350, 'Cardiologista com mais de 15 anos de experiência em diagnóstico e tratamento de doenças cardiovasculares.', true, true, '[{"time":"08:00","available":true},{"time":"08:30","available":true},{"time":"09:00","available":false},{"time":"09:30","available":true},{"time":"10:00","available":true},{"time":"14:00","available":true},{"time":"14:30","available":false},{"time":"15:00","available":true}]'),
+  ('doc_002', 'Dra. Ana Beatriz Costa', 'Dermatologia', 'CRM/SP 234567', 'https://api.dicebear.com/7.x/avataaars/svg?seed=AnaBeatriz&backgroundColor=c0aede', 4.8, 98, 12, 300, 'Dermatologista especializada em dermatologia clínica e estética.', true, true, '[{"time":"09:00","available":true},{"time":"09:30","available":true},{"time":"10:00","available":true},{"time":"10:30","available":false},{"time":"11:00","available":true}]'),
+  ('doc_003', 'Dr. Carlos Eduardo Lima', 'Ortopedia', 'CRM/SP 345678', 'https://api.dicebear.com/7.x/avataaars/svg?seed=Carlos&backgroundColor=d1d4f9', 4.7, 85, 18, 400, 'Ortopedista e traumatologista com foco em medicina esportiva e cirurgia do joelho.', false, true, '[{"time":"07:00","available":true},{"time":"07:30","available":true},{"time":"08:00","available":true},{"time":"08:30","available":true}]'),
+  ('doc_004', 'Dra. Fernanda Oliveira', 'Ginecologia', 'CRM/SP 456789', 'https://api.dicebear.com/7.x/avataaars/svg?seed=Fernanda&backgroundColor=ffd5dc', 4.9, 156, 20, 320, 'Ginecologista e obstetra com ampla experiência em saúde da mulher.', true, true, '[{"time":"08:00","available":true},{"time":"08:30","available":false},{"time":"09:00","available":true},{"time":"09:30","available":true},{"time":"14:00","available":true},{"time":"14:30","available":true}]'),
+  ('doc_005', 'Dr. Marcos Vinícius Souza', 'Neurologia', 'CRM/SP 567890', 'https://api.dicebear.com/7.x/avataaars/svg?seed=Marcos&backgroundColor=b6e3f4', 4.6, 72, 10, 380, 'Neurologista com especialização em cefaleia e distúrbios do sono.', true, true, '[{"time":"10:00","available":true},{"time":"10:30","available":true},{"time":"11:00","available":true},{"time":"11:30","available":false}]'),
+  ('doc_006', 'Dra. Juliana Martins', 'Pediatria', 'CRM/SP 678901', 'https://api.dicebear.com/7.x/avataaars/svg?seed=Juliana&backgroundColor=c0aede', 4.8, 203, 14, 280, 'Pediatra humanizada com foco em puericultura e desenvolvimento infantil.', true, true, '[{"time":"08:00","available":true},{"time":"08:30","available":true},{"time":"09:00","available":true},{"time":"09:30","available":true},{"time":"10:00","available":false}]'),
+  ('doc_007', 'Dr. Paulo Roberto Mendes', 'Oftalmologia', 'CRM/SP 789012', 'https://api.dicebear.com/7.x/avataaars/svg?seed=Paulo&backgroundColor=d1d4f9', 4.5, 64, 8, 290, 'Oftalmologista com experiência em cirurgia refrativa e catarata.', false, true, '[{"time":"13:00","available":true},{"time":"13:30","available":true},{"time":"14:00","available":false},{"time":"14:30","available":true}]'),
+  ('doc_008', 'Dra. Camila Ribeiro', 'Endocrinologia', 'CRM/SP 890123', 'https://api.dicebear.com/7.x/avataaars/svg?seed=Camila&backgroundColor=ffd5dc', 4.7, 91, 11, 350, 'Endocrinologista especializada em diabetes, tireoide e metabolismo.', true, true, '[{"time":"09:00","available":true},{"time":"09:30","available":false},{"time":"10:00","available":true},{"time":"10:30","available":true}]'),
+  ('doc_009', 'Dr. Thiago Nunes', 'Psiquiatria', 'CRM/SP 901234', 'https://api.dicebear.com/7.x/avataaars/svg?seed=Thiago&backgroundColor=b6e3f4', 4.9, 145, 16, 450, 'Psiquiatra com foco em transtornos de ansiedade e depressão.', true, true, '[{"time":"08:00","available":false},{"time":"08:30","available":true},{"time":"09:00","available":true},{"time":"15:00","available":true},{"time":"15:30","available":true},{"time":"16:00","available":true}]'),
+  ('doc_010', 'Dra. Luciana Ferreira', 'Gastroenterologia', 'CRM/SP 012345', 'https://api.dicebear.com/7.x/avataaars/svg?seed=Luciana&backgroundColor=c0aede', 4.6, 78, 9, 330, 'Gastroenterologista com experiência em endoscopia e doenças inflamatórias intestinais.', true, true, '[{"time":"07:30","available":true},{"time":"08:00","available":true},{"time":"08:30","available":true},{"time":"09:00","available":false}]')
+on conflict (id) do update set
+  full_name = excluded.full_name,
+  specialty = excluded.specialty,
+  crm = excluded.crm,
+  avatar_url = excluded.avatar_url,
+  rating = excluded.rating,
+  reviews_count = excluded.reviews_count,
+  experience_years = excluded.experience_years,
+  price_per_session = excluded.price_per_session,
+  bio = excluded.bio,
+  available_online = excluded.available_online,
+  available_in_person = excluded.available_in_person,
+  available_slots = excluded.available_slots;

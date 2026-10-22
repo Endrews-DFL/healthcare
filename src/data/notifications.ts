@@ -1,0 +1,52 @@
+import { Notification } from "@/types"
+
+export const mockNotifications: Notification[] = [
+  {
+    id: "notif_001",
+    userId: "usr_001",
+    title: "Consulta confirmada",
+    message: "Sua consulta com Dr. Ricardo Almeida foi confirmada para 28/10 às 09:00.",
+    type: "appointment",
+    read: false,
+    actionUrl: "/appointments/apt_001",
+    createdAt: "2026-10-22T08:00:00Z",
+  },
+  {
+    id: "notif_002",
+    userId: "usr_001",
+    title: "Resultado disponível",
+    message: "O resultado do exame eGFR - Low Range já está disponível.",
+    type: "exam",
+    read: false,
+    actionUrl: "/exams/exam_001",
+    createdAt: "2026-10-21T15:30:00Z",
+  },
+  {
+    id: "notif_003",
+    userId: "usr_001",
+    title: "Lembrete de medicamento",
+    message: "Não se esqueça de tomar Amoxicilina 500mg às 14:00.",
+    type: "prescription",
+    read: true,
+    createdAt: "2026-10-21T13:45:00Z",
+  },
+  {
+    id: "notif_004",
+    userId: "usr_001",
+    title: "Nova receita disponível",
+    message: "Dra. Ana Beatriz Costa adicionou uma nova prescrição ao seu prontuário.",
+    type: "prescription",
+    read: true,
+    actionUrl: "/prescriptions",
+    createdAt: "2026-10-20T16:00:00Z",
+  },
+  {
+    id: "notif_005",
+    userId: "usr_001",
+    title: "Renovação do plano",
+    message: "Seu plano Premium Saúde será renovado automaticamente em 31/12/2027.",
+    type: "general",
+    read: true,
+    createdAt: "2026-10-18T10:00:00Z",
+  },
+]
